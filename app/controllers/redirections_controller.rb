@@ -21,29 +21,6 @@ class RedirectionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /redirections/1 or /redirections/1.json
-  def update
-    respond_to do |format|
-      if @redirection.update(redirection_params)
-        format.html { redirect_to redirection_url(@redirection), notice: 'Redirection was successfully updated.' }
-        format.json { render :show, status: :ok, location: @redirection }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @redirection.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /redirections/1 or /redirections/1.json
-  def destroy
-    @redirection.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to redirections_url, notice: 'Redirection was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.
