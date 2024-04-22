@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'redirections#new'
   resources :redirections, only: %i[new create show]
+  get '/:source_path', to: 'redirections#show'
 end

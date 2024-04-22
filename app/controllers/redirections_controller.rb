@@ -2,6 +2,7 @@ class RedirectionsController < ApplicationController
   # GET /redirections/1 or /redirections/1.json
   def show
     @redirection = Redirection.find_by(source_path: params[:source_path])
+    redirect_to @redirection.destination_url, allow_other_host: true
   end
 
   # GET /redirections/new
