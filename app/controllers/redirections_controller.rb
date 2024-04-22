@@ -1,8 +1,8 @@
 class RedirectionsController < ApplicationController
-  before_action :set_redirection, only: %i[show edit update destroy]
-
   # GET /redirections/1 or /redirections/1.json
-  def show; end
+  def show
+    @redirection = Redirection.find_by(source_path: params[:source_path])
+  end
 
   # GET /redirections/new
   def new
